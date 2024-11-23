@@ -101,6 +101,7 @@ class PacketHandler(QThread):
         self.is_run_by_step = False
 
     def load_file(self, pcap_file) -> None:
+        self.new_packets = None
         self.packet_file = pcap_file
         print('Loading file...')
         self.packets = scapy.rdpcap(pcap_file)
